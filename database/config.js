@@ -1,4 +1,3 @@
-const { __esModule } = require("-");
 const mongoose = require("mongoose");
 
 const dbConnection = async () => {
