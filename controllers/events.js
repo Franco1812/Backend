@@ -8,6 +8,10 @@ const getEventos = (req, res = response) => {
 };
 
 const crearEventos = (req, res = response) => {
+  //verificar que tenga el evento
+      console.log(req.body);
+      
+
     res.json({
       ok: true,
       msg: "obtener crearEventos",
