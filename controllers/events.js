@@ -1,5 +1,5 @@
 const response = require("express");
- const Evento = require("../models/Evento");
+const Evento = require("../models/Evento");
 
 const getEventos = async(req, res = response) => {
   const eventos = await Evento.find()
@@ -46,7 +46,7 @@ const crearEventos = async(req, res = response) => {
             });
         }
 
-        if ( evento.user && evento.user.toString() !== uid ) {
+        if ( evento.user.toString() !== uid ) {
             return res.status(401).json({
                 ok: false,
                 msg: 'No tiene privilegio de editar este evento'
@@ -92,7 +92,7 @@ const eliminarEventos = async( req, res = response ) => {
           });
       }
 
-      if ( evento.user && evento.user.toString() !== uid ) {
+      if (  evento.user.toString() !== uid ) {
           return res.status(401).json({
               ok: false,
               msg: 'No tiene privilegio de eliminar este evento'
